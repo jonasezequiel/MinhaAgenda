@@ -36,6 +36,9 @@ namespace MinhaAgenda
             builder.Services.AddSingleton<ContatosPage>();
             builder.Services.AddSingleton<EditarContatoPage>();
             builder.Services.AddSingleton<AdicionarContatoPage>();
+            builder.Services.AddSingleton<ObservacoesPage>();
+            builder.Services.AddSingleton<AdicionarObservacaoPage>();
+            builder.Services.AddSingleton<EditarObservacaoPage>();
             return builder.Build();
         }
     }

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MinhaAgenda.Views.ObservacoesPage"
+             Title="Observações">
+    <Grid RowDefinitions="50,*,50"
+          RowSpacing="5"
+          ColumnDefinitions="*"
+          Padding="5">
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            x:Name="lblContactName"
+            FontSize="Medium"
+            FontAttributes="Bold"
+            VerticalOptions="Center">
+        </Label>
+        <ListView
+            Grid.Row="1"
+            Grid.Column="0"
+            x:Name="listaObservacoes"
+            BackgroundColor="Transparent"
+            SeparatorColor="LightBlue"
+            SeparatorVisibility="None"
+            RowHeight="80"
+            ItemSelected="listaObservacoes_ItemSelected"
+            ItemTapped="listaObservacoes_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <VerticalStackLayout Padding="10">
+                            <Label Text="{Binding Path=Data, StringFormat='{0:dd/MM/yyyy}'}" 
+                                   FontSize="Small"
+                                   TextColor="Gray"/>
+                            <Label Text="{Binding Path=Texto}" 
+                                   FontSize="Medium"/>
+                        </VerticalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="Adicionar Observação"
+            Clicked="btnAdicionar_Clicked">
+        </Button>
+    </Grid>
+</ContentPage>

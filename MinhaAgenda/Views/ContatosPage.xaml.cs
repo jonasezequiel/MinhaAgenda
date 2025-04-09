@@ -68,4 +68,32 @@ public partial class ContatosPage : ContentPage
     {
         await Shell.Current.GoToAsync($"{nameof(AdicionarContatoPage)}");
     }
+    private async void Observacoes_Clicked(object sender, EventArgs e)
+    {
+        var itemMenu = sender as MenuItem;
+        var contato = itemMenu!.CommandParameter as Contato;
+        await Shell.Current.GoToAsync($"{nameof(ObservacoesPage)}?Id={contato!.Id}");
+    }
+
+
+    public class Observacao
+    {
+        public Guid Id { get; set; }
+        public Guid ContatoId { get; set; }
+        public Contato? Contato { get; set; }
+        public string Texto { get; set; } = string.Empty;
+        public DateTime Data { get; set; } = DateTime.Now;
+        
+        // Construtor padrão
+        public Observacao() { }
+
+        // Construtor para facilitar a criação
+        public Observacao(Guid contatoId, string texto, DateTime? data = null)
+        {
+            Id = Guid.NewGuid();
+            ContatoId = contatoId;
+            Texto = texto;
+            Data = data ?? DateTime.Now;
+        }
+    }
 }

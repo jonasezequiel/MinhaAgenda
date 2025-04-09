@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MinhaAgenda.Views.Controls.ObservacoesControl">
+    <VerticalStackLayout Spacing="10" Margin="20,20,20,0">
+        <Frame Padding="10,2,10,2">
+            <HorizontalStackLayout Spacing="5">
+                <Label Text="Contato: " VerticalOptions="Center" WidthRequest="80"></Label>
+                <Label x:Name="lblContactName" VerticalOptions="Center"></Label>
+            </HorizontalStackLayout>
+        </Frame>
+        <Frame Padding="10,2,10,2">
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Observação:"></Label>
+                <Editor x:Name="entryObservacao" 
+                       Placeholder="Digite sua observação sobre o contato" 
+                       HeightRequest="150">
+                    <Editor.Behaviors>
+                        <toolkit:TextValidationBehavior 
+                            x:Name="obsValidator"
+                            Flags="ValidateOnAttaching,ValidateOnValueChanged"
+                            MinimumLength="5"
+                        />
+                    </Editor.Behaviors>
+                </Editor>
+            </VerticalStackLayout>
+        </Frame>
+        <Frame Padding="10,2,10,2">
+            <HorizontalStackLayout Spacing="5">
+                <Label Text="Data: " VerticalOptions="Center" WidthRequest="80"></Label>
+                <DatePicker x:Name="entryData" VerticalOptions="Center"></DatePicker>
+            </HorizontalStackLayout>
+        </Frame>
+        <Button x:Name="btnSave" Text="Salvar" Clicked="btnSave_Clicked"></Button>
+        <Button x:Name="btnCancel" Text="Cancelar" Clicked="btnCancel_Clicked"></Button>
+    </VerticalStackLayout>
+</ContentView>

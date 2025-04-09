@@ -57,6 +57,20 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Remove="Views\ObservacoesControl.xaml" />
+	  <MauiXaml Remove="Views\ObservacoesPage.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Views\ObservacoesControl.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Views\ObservacoesPage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="3.1.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
@@ -71,6 +85,24 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\AdicionarOBSPage .xaml.cs">
+	    <DependentUpon>AdicionarOBSPage .xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\EditarObservacaoPage.xaml.cs">
+	    <DependentUpon>EditarObservacaoPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\ObservacoesControl.xaml.cs">
+	    <DependentUpon>ObservacoesControl.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\ObservacoesPage.xaml.cs">
+	    <DependentUpon>ObservacoesPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\AdicionarOBSPage .xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\AdicionarContatoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -78,6 +110,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Controls\ContatosControl.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\EditarObservacaoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\EditarContatoPage.xaml">
