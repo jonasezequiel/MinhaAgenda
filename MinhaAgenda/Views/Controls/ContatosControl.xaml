@@ -52,6 +52,12 @@
                 <Entry x:Name="entryAddress" Placeholder="Endereço" VerticalOptions="Center"></Entry>
             </HorizontalStackLayout>
         </Frame>
+        <Frame Padding="10,2,10,2">
+            <HorizontalStackLayout Spacing="5">
+                <Label Text="Observação " VerticalOptions="Center" WidthRequest="60"></Label>
+                <Entry x:Name="entryObservacao" Placeholder="Observação" VerticalOptions="Center"></Entry>
+            </HorizontalStackLayout>
+        </Frame>
         <Button x:Name="btnSave" Text="Salvar" Clicked="btnSave_Clicked"></Button>
         <Button x:Name="btnCancel" Text="Cancelar" Clicked="btnCancel_Clicked"></Button>
     </VerticalStackLayout>
